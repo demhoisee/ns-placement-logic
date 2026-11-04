@@ -70,4 +70,4 @@ The placement logic should follow these steps:
 
 For **CL2–CL5**, the two-AZ footprint is established; their normal split and failover guarantee still need a policy. If they must also preserve 100% after losing one AZ, **each selected AZ needs capacity for all of `Q`**, giving `2Q` total protected capacity.
 
-I saved the equations, affinity rules and implementation pseudocode in the [placement logic document](docs/openshift-namespace-placement-logic.md).
+
