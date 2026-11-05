@@ -1,312 +1,23 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>openshift-placement-workflow.html</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<title>Openshift Placement Workflow</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" scrolling="no" referrerpolicy="no-referrer" title="openshift-placement-workflow.html" data-srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en-US&quot;&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Openshift Placement Workflow" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'&quot;&gt;
-&lt;title&gt;openshift-placement-workflow.html&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
-&lt;script&gt;(() =&gt; {
-  const root = document.documentElement;
-  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
-  const apply = Reflect.apply;
-  const isArray = Array.isArray;
-  const hasOwn = Object.hasOwn;
-  const parentWindow = globalThis.parent;
-  const stringify = JSON.stringify;
-  const parse = JSON.parse;
-  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
-  const initialStateElement = document.getElementById(
-    &quot;codex-visualization-widget-state&quot;,
-  );
-  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
-  initialStateElement?.remove();
-  /** @type {Record&lt;string, unknown&gt; | null} */
-  let state = initialGlobals.widgetState ?? null;
-  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
-  let nextStateRequestId = 0;
-  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
-  const pendingStateWrites = new Map();
-  const persistenceError = () =&gt;
-    Object.assign(
-      new Error(&quot;The host could not persist the widget state update&quot;),
-      {
-        code: -32000,
-        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
-      },
-    );
-  /**
-   * @param {object} prototype
-   * @param {string} property
-   */
-  const getPrototypeGetter = (prototype, property) =&gt; {
-    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
-    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
-    if (getter == null) {
-      throw new Error(`Missing ${property} getter`);
-    }
-    return getter;
-  };
-  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
-  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
-  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const addHostMessageListener = MessagePort.prototype.addEventListener;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const postHostMessage = MessagePort.prototype.postMessage;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const startHostPort = MessagePort.prototype.start;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
-  /** @type {MessagePort | null} */
-  let hostPort = null;
-  const postToHost = (type, payload) =&gt; {
-    if (hostPort != null) {
-      apply(postHostMessage, hostPort, [{ type, ...payload }]);
-    }
-  };
-  const openExternal = ({ href }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;open-external&quot;, { href });
-    }
-  };
-  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;follow-up&quot;, { context, prompt, title });
-    }
-    return Promise.resolve();
-  };
-  /**
-   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
-   * @returns {Promise&lt;void&gt;}
-   */
-  const setWidgetState = async (next) =&gt; {
-    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
-    if (
-      nextState == null ||
-      typeof nextState !== &quot;object&quot; ||
-      isArray(nextState)
-    ) {
-      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-    }
-    const inputState = stringify(
-      nextState,
-      (_key, /** @type {unknown} */ value) =&gt; {
-        if (
-          typeof value === &quot;undefined&quot; ||
-          typeof value === &quot;function&quot; ||
-          typeof value === &quot;symbol&quot; ||
-          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
-        ) {
-          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-        }
-        return value;
-      },
-    );
-    const parsedState = parse(inputState);
-    if (
-      parsedState == null ||
-      typeof parsedState !== &quot;object&quot; ||
-      isArray(parsedState)
-    ) {
-      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
-    }
-    const storedState = {
-      modelContent: null,
-      privateContent: null,
-      ...parsedState,
-    };
-    const serializedState = stringify(storedState);
-    if (encode(serializedState).length &gt; 16 * 1024) {
-      throw new TypeError(
-        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
-      );
-    }
-    if (
-      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
-      (!isArray(storedState.imageIds) ||
-        storedState.imageIds.some(
-          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
-        ))
-    ) {
-      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
-    }
-    if (storedState.imageIds?.length &gt; 0) {
-      throw Object.assign(
-        new TypeError(&quot;Visualization state does not support image attachments&quot;),
-        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
-      );
-    }
-    state = storedState;
-    globalThis.openai.widgetState = state;
-    globalThis.dispatchEvent(
-      new CustomEvent(&quot;openai:set_globals&quot;, {
-        detail: { globals: { widgetState: state } },
-      }),
-    );
-    if (statePersistence === &quot;none&quot;) {
-      throw persistenceError();
-    }
-    const id = ++nextStateRequestId;
-    return new Promise((resolve, reject) =&gt; {
-      const timeout = globalThis.setTimeout(() =&gt; {
-        pendingStateWrites.delete(id);
-        reject(persistenceError());
-      }, 30_000);
-      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
-      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
-    });
-  };
-  const syncTheme = () =&gt; {
-    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
-    root.dataset.theme = theme;
-    globalThis.openai = {
-      ...globalThis.openai,
-      openExternal,
-      sendFollowUpMessage,
-      setWidgetState,
-      theme,
-      visualizationStyleVariables: {},
-      visualizationTheme: theme,
-      widgetState: state,
-      statePersistence,
-      stateModelContext: &quot;none&quot;,
-    };
-    globalThis.dispatchEvent(
-      new CustomEvent(&quot;openai:set_globals&quot;, {
-        detail: { globals: globalThis.openai },
-      }),
-    );
-  };
-  const sendHeight = () =&gt; {
-    postToHost(&quot;height&quot;, {
-      height: Math.ceil(
-        Math.max(
-          document.body.scrollHeight,
-          document.body.getBoundingClientRect().height,
-        ),
-      ),
-    });
-  };
-
-  globalThis.addEventListener(
-    &quot;message&quot;,
-    (event) =&gt; {
-      const data = apply(getMessageData, event, []);
-      const ports = apply(getMessagePorts, event, []);
-      const source = apply(getMessageSource, event, []);
-      if (
-        hostPort != null ||
-        source !== parentWindow ||
-        typeof data !== &quot;object&quot; ||
-        data?.type !== &quot;codex-visualization-initialize&quot; ||
-        !isArray(ports) ||
-        ports.length !== 1
-      ) {
-        return;
-      }
-      apply(stopMessagePropagation, event, []);
-      const nextHostPort = ports[0];
-      try {
-        apply(addHostMessageListener, nextHostPort, [
-          &quot;message&quot;,
-          (event) =&gt; {
-            const data = apply(getMessageData, event, []);
-            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
-              sendHeight();
-            } else if (
-              typeof data === &quot;object&quot; &amp;&amp;
-              data?.type === &quot;widget-state-result&quot;
-            ) {
-              /** @type {unknown} */
-              const id = data.id;
-              if (typeof id !== &quot;number&quot;) {
-                return;
-              }
-              const pending = pendingStateWrites.get(id);
-              if (pending != null) {
-                pendingStateWrites.delete(id);
-                globalThis.clearTimeout(pending.timeout);
-                if (data.ok === true) {
-                  pending.resolve();
-                } else {
-                  pending.reject(persistenceError());
-                }
-              }
-            }
-          },
-        ]);
-        apply(startHostPort, nextHostPort, []);
-      } catch {
-        return;
-      }
-      hostPort = nextHostPort;
-      for (const [id, { serializedState }] of pendingStateWrites) {
-        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
-      }
-      sendHeight();
-    },
-    { capture: true },
-  );
-  document.currentScript?.remove();
-  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
-  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
-    if (event.defaultPrevented) {
-      return;
-    }
-    let element = null;
-    if (event.target instanceof globalThis.Element) {
-      element = event.target;
-    } else if (event.target instanceof globalThis.Node) {
-      element = event.target.parentElement;
-    }
-    const link = element?.closest(&quot;a[href]&quot;);
-    const href = link?.getAttribute(&quot;href&quot;);
-    if (href == null) {
-      return;
-    }
-    if (href.startsWith(&quot;#&quot;)) {
-      let id;
-      try {
-        id = decodeURIComponent(href.slice(1));
-      } catch {
-        return;
-      }
-      const target = id.length === 0 ? root : document.getElementById(id);
-      if (
-        target == null ||
-        globalThis.navigator.userActivation?.isActive !== true
-      ) {
-        return;
-      }
-      event.preventDefault();
-      postToHost(&quot;scroll-to&quot;, {
-        top: target.getBoundingClientRect().top + globalThis.scrollY,
-      });
-      return;
-    }
-    event.preventDefault();
-    openExternal({ href });
-  });
-  new ResizeObserver(sendHeight).observe(document.body);
-  syncTheme();
-})();
-&lt;/script&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://persistent.oaistatic.com/plugins/visualize/ https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Openshift Placement Workflow&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -426,7 +137,7 @@
   --radius-2xl: calc(var(--radius) * 2);
   --radius-full: 9999px;
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E&quot;);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
 
   /* Legacy aliases; not part of the current agent contract. */
   --viz-bg: transparent;
@@ -1036,7 +747,7 @@ a.btn {
   left: 50%;
   display: flex;
   width: max-content;
-  /* Leave room for the host's design-controls launcher at the trailing edge. */
+  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
   max-width: calc(100% - 96px);
   align-items: center;
   gap: 0;
@@ -1638,7 +1349,7 @@ textarea.form-control {
 
 /* Web recipes are the default, including on renderers without inline style queries. */
 @supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
-  /* Match the host's proportional text-sm scale at every text preference. */
+  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
   .tooltip,
   .viz-badge,
   .btn,
@@ -1812,88 +1523,305 @@ svg.lucide {
 }
 
 html&gt;body{padding:0}&lt;/style&gt;
-&lt;style id=&quot;codex-visualization-host-theme&quot;&gt;:root {}&lt;/style&gt;
-&lt;script&gt;
-(() =&gt; {
-  // Host colors are defaults; later authored styles can give the same names
-  // their own meaning (for example, --muted as a chart's label color).
-  const hostStyles = document.getElementById(&quot;codex-visualization-host-theme&quot;);
-  const hostStyle = hostStyles.sheet.cssRules[0].style;
-  // Typography, geometry and interaction cursors still follow the host.
-  const styleForProperty = (property) =&gt;
-    /^--(?:font-|radius|corner-shape$|control-spacing$|cursor-interaction$|icon-size$|visualize-paint-gutter$)/.test(property)
-      ? document.documentElement.style
-      : hostStyle;
-  const initialGlobals =
-    globalThis.__codexVisualizationInitialGlobals ?? globalThis.openai;
-  delete globalThis.__codexVisualizationInitialGlobals;
-  if (initialGlobals?.statePersistence != null) {
-    globalThis.openai ??= {};
-    globalThis.openai.statePersistence = initialGlobals.statePersistence;
-    globalThis.openai.stateModelContext = initialGlobals.stateModelContext ?? &quot;none&quot;;
-  }
-  if (!true) {
-    return;
-  }
-  let appliedProperties = [];
-  const applyHostStyleVariables = (styleVariables) =&gt; {
-    if (styleVariables == null || typeof styleVariables !== &quot;object&quot;) {
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
       return;
     }
-    for (const property of appliedProperties) {
-      styleForProperty(property).removeProperty(property);
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
     }
-    appliedProperties = [];
-    for (const [property, value] of Object.entries(styleVariables)) {
-      if (property.startsWith(&quot;--&quot;) &amp;&amp; typeof value === &quot;string&quot;) {
-        styleForProperty(property).setProperty(property, value);
-        appliedProperties.push(property);
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
       }
-    }
-  };
-
-  const syncHostStyles = (globals) =&gt; {
-    applyHostStyleVariables(globals?.visualizationStyleVariables);
-    const sandboxDocument = globalThis.frameElement?.ownerDocument;
-    if (sandboxDocument != null &amp;&amp; globals?.visualizationTheme != null) {
-      let colorSchemeMeta = sandboxDocument.querySelector(
-        'meta[name=&quot;color-scheme&quot;]',
-      );
-      if (colorSchemeMeta == null) {
-        colorSchemeMeta = sandboxDocument.createElement(&quot;meta&quot;);
-        colorSchemeMeta.name = &quot;color-scheme&quot;;
-        sandboxDocument.head.appendChild(colorSchemeMeta);
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
       }
-      colorSchemeMeta.content = globals.visualizationTheme;
-      sandboxDocument.documentElement.style.colorScheme =
-        globals.visualizationTheme;
-      // Paint the host surface behind transparent saved visualization documents.
-      sandboxDocument.documentElement.style.backgroundColor =
-        hostStyle.getPropertyValue(&quot;--background&quot;);
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
     }
-  };
-
-  syncHostStyles(initialGlobals);
-  globalThis.addEventListener(&quot;openai:set_globals&quot;, (event) =&gt; {
-    syncHostStyles(event.detail?.globals);
+    event.preventDefault();
+    openExternal({ href });
   });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
 })();
 &lt;/script&gt;
-
-
-
-
-
 &lt;div id=&quot;ocp-placement-walkthrough&quot;&gt;
   &lt;style&gt;
     #ocp-placement-walkthrough { display: grid; gap: calc(var(--font-size-base) * 1); color: var(--foreground); }
     #ocp-placement-walkthrough .op-heading { display: grid; gap: calc(var(--font-size-base) * .25); padding-right: 90px; }
     #ocp-placement-walkthrough .op-playback { display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--font-size-base) * .5); }
-    #ocp-placement-walkthrough .op-layout { display: grid; grid-template-columns: minmax(165px, .36fr) minmax(0, 1fr); gap: calc(var(--font-size-base) * 1.5); }
-    #ocp-placement-walkthrough .op-flow { list-style: none; padding: 0; margin: 0; display: grid; align-content: start; }
+    #ocp-placement-walkthrough .op-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: calc(var(--font-size-base) * 1.5); }
+    #ocp-placement-walkthrough .op-flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: calc(var(--font-size-base) * .75); align-content: start; }
     #ocp-placement-walkthrough .op-flow li { display: grid; grid-template-columns: 26px minmax(0, 1fr); column-gap: calc(var(--font-size-base) * .5); position: relative; padding-bottom: calc(var(--font-size-base) * 1.25); }
     #ocp-placement-walkthrough .op-flow li:last-child { padding-bottom: 0; }
-    #ocp-placement-walkthrough .op-flow li::after { content: ''; position: absolute; top: 27px; bottom: 1px; left: 12px; width: 1px; background: var(--border); }
+    #ocp-placement-walkthrough .op-flow li::after { display: none; }
     #ocp-placement-walkthrough .op-flow li:last-child::after { display: none; }
     #ocp-placement-walkthrough .op-dot { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: var(--background); color: var(--muted-foreground); transition: background .25s, color .25s, transform .25s; }
     #ocp-placement-walkthrough .op-flow li[data-state=&quot;active&quot;] .op-dot { background: var(--primary); color: var(--primary-foreground); transform: scale(1.08); }
@@ -1907,12 +1835,20 @@ html&gt;body{padding:0}&lt;/style&gt;
     #ocp-placement-walkthrough .op-key { display: inline-flex; align-items: center; gap: calc(var(--font-size-base) * .35); }
     #ocp-placement-walkthrough .op-swatch { width: 12px; height: 8px; background: var(--viz-series-1); }
     #ocp-placement-walkthrough .op-swatch.spare { background: var(--viz-series-2); opacity: .55; }
+    #ocp-placement-walkthrough .op-pool-mark { width: 11px; height: 11px; background: var(--viz-series-3); }
+    #ocp-placement-walkthrough .op-pool-mark.standard { background: var(--viz-series-4); border-radius: 50%; }
     #ocp-placement-walkthrough .op-map { width: 100%; display: block; overflow: visible; }
     #ocp-placement-walkthrough .op-map text { fill: var(--foreground); }
     #ocp-placement-walkthrough .op-map .op-secondary { fill: var(--muted-foreground); }
-    #ocp-placement-walkthrough .op-map .op-az-box { fill: color-mix(in srgb, var(--foreground) 3%, transparent); stroke: var(--border); stroke-width: 1; }
-    #ocp-placement-walkthrough .op-map .op-az-box.is-target { fill: color-mix(in srgb, var(--viz-series-1) 7%, transparent); }
+    #ocp-placement-walkthrough .op-map .op-az-boundary { fill: none; stroke: var(--border); stroke-width: 1; }
+    #ocp-placement-walkthrough .op-map .op-az-box { stroke: var(--border); stroke-width: 1; }
+    #ocp-placement-walkthrough .op-map .op-az-box.critical { fill: color-mix(in srgb, var(--viz-series-3) 7%, transparent); }
+    #ocp-placement-walkthrough .op-map .op-az-box.standard { fill: color-mix(in srgb, var(--viz-series-4) 7%, transparent); }
+    #ocp-placement-walkthrough .op-map .op-az-box.is-target { stroke: var(--foreground); }
     #ocp-placement-walkthrough .op-map .op-az-box.is-offline { fill: color-mix(in srgb, var(--destructive) 8%, transparent); }
+    #ocp-placement-walkthrough .op-map .op-az-box.is-ineligible { opacity: .45; }
+    #ocp-placement-walkthrough .op-map .op-pool-critical { fill: var(--viz-series-3); }
+    #ocp-placement-walkthrough .op-map .op-pool-standard { fill: var(--viz-series-4); }
     #ocp-placement-walkthrough .op-map .op-bar-track { fill: color-mix(in srgb, var(--foreground) 7%, transparent); }
     #ocp-placement-walkthrough .op-map .op-live { fill: var(--viz-series-1); }
     #ocp-placement-walkthrough .op-map .op-spare { fill: var(--viz-series-2); opacity: .55; }
@@ -1931,16 +1867,24 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/style&gt;
   &lt;div class=&quot;op-heading&quot;&gt;
     &lt;h2&gt;Namespace placement workflow&lt;/h2&gt;
-    &lt;span class=&quot;text-small text-muted&quot;&gt;Illustrative clusters · Total application budget: 12 CPU / 48 GiB&lt;/span&gt;
+    &lt;span class=&quot;text-small text-muted&quot;&gt;One datacenter per request · Total application: 12 CPU / 48 GiB&lt;/span&gt;
+    &lt;span id=&quot;op-policy-summary&quot;&gt;CL0/CL1: run 33⅓% and reserve 50% in each AZ.&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-controls&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;op-datacenter&quot;&gt;Datacenter
+      &lt;select class=&quot;form-select&quot; id=&quot;op-datacenter&quot;&gt;
+        &lt;option value=&quot;DCE&quot;&gt;DCE · East&lt;/option&gt;
+        &lt;option value=&quot;DCC&quot;&gt;DCC · Central&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;
     &lt;label class=&quot;form-label&quot; for=&quot;op-scenario&quot;&gt;Request scenario
       &lt;select class=&quot;form-select&quot; id=&quot;op-scenario&quot;&gt;
         &lt;option value=&quot;balanced&quot;&gt;CL0 · No AZ preference&lt;/option&gt;
-        &lt;option value=&quot;affinity&quot;&gt;CL1 · Must include DCE/AZ2&lt;/option&gt;
+        &lt;option value=&quot;affinity&quot;&gt;CL1 · Must include AZ2&lt;/option&gt;
         &lt;option value=&quot;twoaz&quot;&gt;CL3 · Two-AZ placement&lt;/option&gt;
         &lt;option value=&quot;capacity&quot;&gt;CL0 · Failover capacity shortfall&lt;/option&gt;
         &lt;option value=&quot;exclusive&quot;&gt;CL0 · Exclusive AZ conflict&lt;/option&gt;
+        &lt;option value=&quot;poolblocked&quot;&gt;CL0 · Dedicated pool unavailable&lt;/option&gt;
       &lt;/select&gt;
     &lt;/label&gt;
   &lt;/div&gt;
@@ -1954,7 +1898,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;ol class=&quot;op-flow&quot; aria-label=&quot;Placement stages&quot;&gt;
       &lt;li data-step=&quot;0&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Request&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;Q means 100% of the app&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
       &lt;li data-step=&quot;1&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Validate affinity&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;Exclusive AZ → conflict&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-      &lt;li data-step=&quot;2&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Build candidates&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;One DC; required AZs&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+      &lt;li data-step=&quot;2&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Filter pools&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;Within the selected DC&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
       &lt;li data-step=&quot;3&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Size allocations&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;Normal + failover ceiling&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
       &lt;li data-step=&quot;4&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Check capacity&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;No feasible plan → defer&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
       &lt;li data-step=&quot;5&quot;&gt;&lt;span class=&quot;op-dot tabular-nums&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;op-step-text&quot;&gt;&lt;span class=&quot;op-step-label&quot;&gt;Rank plans&lt;/span&gt;&lt;span class=&quot;text-small text-muted op-step-hint&quot;&gt;Affinity, then headroom&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
@@ -1967,7 +1911,13 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;h3 id=&quot;op-phase&quot;&gt;Application request&lt;/h3&gt;
         &lt;span class=&quot;text-small text-muted&quot; id=&quot;op-request&quot;&gt;&lt;/span&gt;
       &lt;/div&gt;
-      &lt;svg class=&quot;op-map&quot; id=&quot;op-map&quot; role=&quot;img&quot; aria-label=&quot;Illustrative clusters in DCE and DCC, with application allocation and protected failover headroom.&quot;&gt;&lt;/svg&gt;
+      &lt;div class=&quot;op-legend text-small&quot; aria-label=&quot;Cluster pool legend&quot;&gt;
+        &lt;span class=&quot;op-key&quot;&gt;&lt;span class=&quot;op-pool-mark&quot;&gt;&lt;/span&gt;Critical · gp1 / ap1 · CL0–CL1&lt;/span&gt;
+        &lt;span class=&quot;op-key&quot;&gt;&lt;span class=&quot;op-pool-mark standard&quot;&gt;&lt;/span&gt;Standard · gp2 / ap2 · CL2–CL5&lt;/span&gt;
+        &lt;span class=&quot;text-muted&quot;&gt;Illustrative mapping · outline = target · c = free CPU cores · Gi = free GiB&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;svg class=&quot;op-map&quot; id=&quot;op-map&quot; role=&quot;img&quot; aria-label=&quot;Only the selected datacenter is evaluated. Its three AZs each contain gp1 and ap1 dedicated to CL0 and CL1, and gp2 and ap2 for CL2 through CL5. One eligible cluster is selected in each required AZ.&quot;&gt;&lt;/svg&gt;
+      &lt;span class=&quot;text-small text-muted&quot; id=&quot;op-selection&quot;&gt;No placement selected.&lt;/span&gt;
       &lt;div class=&quot;op-legend text-small&quot;&gt;
         &lt;span class=&quot;op-key&quot;&gt;&lt;span class=&quot;op-swatch&quot;&gt;&lt;/span&gt;&lt;span id=&quot;op-live-label&quot;&gt;Normal share&lt;/span&gt;&lt;/span&gt;
         &lt;span class=&quot;op-key&quot;&gt;&lt;span class=&quot;op-swatch spare&quot;&gt;&lt;/span&gt;&lt;span id=&quot;op-spare-label&quot;&gt;Failover headroom&lt;/span&gt;&lt;/span&gt;
@@ -1992,46 +1942,80 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;script&gt;
-  (function () {
+(function () {
   &quot;use strict&quot;;
 
+  // Illustrative, user-approved mapping; cluster names do not intrinsically define a pool.
+  // gp1/ap1 are dedicated to CL0/CL1; gp2/ap2 are dedicated to CL2–CL5.
   const FULL_LOAD = Object.freeze({ cpu: 12, memory: 48 });
+  const CRITICAL_CLS = [&quot;CL0&quot;, &quot;CL1&quot;];
+  const STANDARD_CLS = [&quot;CL2&quot;, &quot;CL3&quot;, &quot;CL4&quot;, &quot;CL5&quot;];
   const scenarios = Object.freeze([
     Object.freeze({
-      id: &quot;balanced&quot;, label: &quot;No AZ preference&quot;, cl: &quot;CL0&quot;,
-      affinity: &quot;No AZ preference&quot;, dc: &quot;Any DC&quot;,
-      description: &quot;Compare both datacenters and select the feasible three-AZ plan with the lowest worst-case utilization.&quot;
+      id: &quot;balanced&quot;, label: &quot;No AZ preference&quot;, cl: &quot;CL0&quot;, affinity: &quot;No AZ preference&quot;, dc: &quot;DCE&quot;,
+      description: &quot;Compare eligible critical-pool cluster combinations within the selected datacenter; preserve three-AZ coverage.&quot;
     }),
     Object.freeze({
-      id: &quot;affinity&quot;, label: &quot;Must include DCE/AZ2&quot;, cl: &quot;CL1&quot;,
-      affinity: &quot;Must include DCE/AZ2&quot;, dc: &quot;DCE&quot;,
-      description: &quot;Honor mandatory AZ inclusion while retaining all three AZs for this critical application.&quot;
+      id: &quot;affinity&quot;, label: &quot;Must include AZ2&quot;, cl: &quot;CL1&quot;, affinity: &quot;Must include selected DC/AZ2&quot;, dc: &quot;DCE&quot;,
+      description: &quot;Choose one eligible critical-pool cluster in each selected-datacenter AZ, including the mandatory AZ2. Cluster names may differ between AZs.&quot;
     }),
     Object.freeze({
-      id: &quot;capacity&quot;, label: &quot;Normal fits; failover does not&quot;, cl: &quot;CL0&quot;,
-      affinity: &quot;Must include DCE/AZ2&quot;, dc: &quot;DCE&quot;,
-      description: &quot;DCE/AZ2 can run its normal share, but its five free CPUs cannot support the six-CPU failover ceiling.&quot;
+      id: &quot;capacity&quot;, label: &quot;Normal fits; failover does not&quot;, cl: &quot;CL0&quot;, affinity: &quot;Must include selected DC/AZ2&quot;, dc: &quot;DCE&quot;,
+      description: &quot;Both critical-pool clusters in the selected datacenter&#x27;s AZ2 have five free CPUs. Normal demand fits; the six-CPU failover ceiling does not. Standard-pool capacity cannot be substituted.&quot;
     }),
     Object.freeze({
-      id: &quot;exclusive&quot;, label: &quot;Exclusive AZ conflicts&quot;, cl: &quot;CL0&quot;,
-      affinity: &quot;Only DCE/AZ2&quot;, dc: &quot;DCE&quot;,
+      id: &quot;exclusive&quot;, label: &quot;Exclusive AZ conflicts&quot;, cl: &quot;CL0&quot;, affinity: &quot;Only selected DC/AZ2&quot;, dc: &quot;DCE&quot;,
       description: &quot;Exclusive single-AZ placement conflicts with the required three-AZ footprint.&quot;
     }),
     Object.freeze({
-      id: &quot;twoaz&quot;, label: &quot;CL3 in two AZs&quot;, cl: &quot;CL3&quot;,
-      affinity: &quot;Must include DCE/AZ2&quot;, dc: &quot;DCE&quot;,
-      description: &quot;Illustrative 50/50 normal split across two AZs. This example makes no single-AZ failover guarantee.&quot;
+      id: &quot;twoaz&quot;, label: &quot;CL3 in its standard pool&quot;, cl: &quot;CL3&quot;, affinity: &quot;Must include selected DC/AZ2&quot;, dc: &quot;DCE&quot;,
+      description: &quot;Illustrative 50/50 normal split across two standard-pool clusters in different AZs. No single-AZ failover guarantee has been assigned.&quot;
+    }),
+    Object.freeze({
+      id: &quot;poolblocked&quot;, label: &quot;Eligible pool unavailable&quot;, cl: &quot;CL0&quot;, affinity: &quot;Must include selected DC/AZ2&quot;, dc: &quot;DCE&quot;,
+      description: &quot;The selected datacenter&#x27;s AZ2 has standard-pool capacity, but neither critical-pool cluster is eligible. The request cannot spill into the other pool.&quot;
     })
   ]);
 
-  const BASE_CLUSTERS = [
-    { id: &quot;DCE-AZ1&quot;, dc: &quot;DCE&quot;, az: &quot;AZ1&quot;, cpuFree: 8, memoryFree: 32 },
-    { id: &quot;DCE-AZ2&quot;, dc: &quot;DCE&quot;, az: &quot;AZ2&quot;, cpuFree: 7, memoryFree: 28 },
-    { id: &quot;DCE-AZ3&quot;, dc: &quot;DCE&quot;, az: &quot;AZ3&quot;, cpuFree: 6, memoryFree: 24 },
-    { id: &quot;DCC-AZ1&quot;, dc: &quot;DCC&quot;, az: &quot;AZ1&quot;, cpuFree: 10, memoryFree: 40 },
-    { id: &quot;DCC-AZ2&quot;, dc: &quot;DCC&quot;, az: &quot;AZ2&quot;, cpuFree: 9, memoryFree: 36 },
-    { id: &quot;DCC-AZ3&quot;, dc: &quot;DCC&quot;, az: &quot;AZ3&quot;, cpuFree: 8, memoryFree: 32 }
-  ];
+  function buildClusters(scenarioId, selectedDC) {
+    const clusters = [];
+    [&quot;DCE&quot;, &quot;DCC&quot;].forEach(function (dc) {
+      [&quot;AZ1&quot;, &quot;AZ2&quot;, &quot;AZ3&quot;].forEach(function (az, azIndex) {
+        const criticalFree = dc === &quot;DCE&quot; ? [[8, 7], [7, 8], [6, 7]][azIndex] :
+          [[10, 9], [9, 8], [8, 7]][azIndex];
+        [&quot;gp1&quot;, &quot;ap1&quot;, &quot;gp2&quot;, &quot;ap2&quot;].forEach(function (name, nameIndex) {
+          const pool = nameIndex &lt; 2 ? &quot;critical&quot; : &quot;standard&quot;;
+          let cpuFree = pool === &quot;critical&quot; ? criticalFree[nameIndex] : name === &quot;gp2&quot; ? 10 : 8;
+          let memoryFree = cpuFree * 4;
+          let eligible = true;
+          let health = &quot;healthy&quot;;
+          if (scenarioId === &quot;capacity&quot; &amp;&amp; dc === selectedDC &amp;&amp; az === &quot;AZ2&quot; &amp;&amp; pool === &quot;critical&quot;) {
+            cpuFree = 5;
+            memoryFree = 30;
+          }
+          if (scenarioId === &quot;poolblocked&quot; &amp;&amp; dc === selectedDC &amp;&amp; az === &quot;AZ2&quot; &amp;&amp; pool === &quot;critical&quot;) {
+            eligible = false;
+            health = &quot;unavailable&quot;;
+          }
+          clusters.push({
+            id: dc + &quot;-&quot; + az + &quot;-&quot; + name,
+            name: name,
+            dc: dc,
+            az: az,
+            pool: pool,
+            allowedCLs: (pool === &quot;critical&quot; ? CRITICAL_CLS : STANDARD_CLS).slice(),
+            cpuFree: cpuFree,
+            memoryFree: memoryFree,
+            cpuCapacity: 24,
+            memoryCapacity: 96,
+            eligible: eligible,
+            health: health
+          });
+        });
+      });
+    });
+    return clusters;
+  }
 
   function scenarioCases(failoverSupported, normal, ceiling) {
     const cases = [{ id: &quot;normal&quot;, label: &quot;Normal operation&quot;, failedAZ: null, demand: normal }];
@@ -2054,28 +2038,39 @@ html&gt;body{padding:0}&lt;/style&gt;
           const needed = state.demand[resource.key];
           checks.push({
             id: state.id + &quot;:&quot; + cluster.id + &quot;:&quot; + resource.key,
-            label: state.label + &quot; · &quot; + cluster.dc + &quot;/&quot; + cluster.az + &quot; · &quot; + resource.name,
+            label: state.label + &quot; · &quot; + cluster.dc + &quot;/&quot; + cluster.az + &quot;/&quot; + cluster.name + &quot; · &quot; + resource.name,
             pass: needed &lt;= resource.free,
             detail: &quot;Needs &quot; + needed + &quot; &quot; + resource.unit + &quot;; &quot; + resource.free + &quot; &quot; + resource.unit + &quot; uncommitted.&quot;
           });
         });
       });
     });
-
-    const score = Math.max.apply(null, targets.map(function (cluster) {
+    const utilizations = targets.map(function (cluster) {
       return Math.max(
         (cluster.cpuCapacity - cluster.cpuFree + ceiling.cpu) / cluster.cpuCapacity,
         (cluster.memoryCapacity - cluster.memoryFree + ceiling.memory) / cluster.memoryCapacity
       );
-    }));
+    });
     return {
       id: targets.map(function (cluster) { return cluster.id; }).join(&quot;+&quot;),
       dc: targets[0].dc,
       clusterIds: targets.map(function (cluster) { return cluster.id; }),
       checks: checks,
       feasible: checks.every(function (check) { return check.pass; }),
-      score: score
+      score: Math.max.apply(null, utilizations),
+      // Resolve equal bottleneck scores by preferring individually roomier targets, then stable ID.
+      totalUtilization: utilizations.reduce(function (sum, value) { return sum + value; }, 0)
     };
+  }
+
+  function combinations(groups) {
+    return groups.reduce(function (plans, choices) {
+      const expanded = [];
+      plans.forEach(function (plan) {
+        choices.forEach(function (cluster) { expanded.push(plan.concat([cluster])); });
+      });
+      return expanded;
+    }, [[]]);
   }
 
   function summarize(candidate, cases, clusters) {
@@ -2089,72 +2084,84 @@ html&gt;body{padding:0}&lt;/style&gt;
       return {
         id: state.id,
         label: state.label,
-        pass: checks.every(function (check) { return check.pass; }),
+        pass: checks.length &gt; 0 &amp;&amp; checks.every(function (check) { return check.pass; }),
         detail: failed.length ? failed.map(function (check) { return check.label + &quot;: &quot; + check.detail; }).join(&quot; &quot;) :
-          targets.map(function (cluster) { return cluster.dc + &quot;/&quot; + cluster.az; }).join(&quot;, &quot;) +
+          targets.map(function (cluster) { return cluster.dc + &quot;/&quot; + cluster.az + &quot;/&quot; + cluster.name; }).join(&quot;, &quot;) +
           &quot; each fit &quot; + state.demand.cpu + &quot; CPU / &quot; + state.demand.memory + &quot; GiB.&quot;
       };
     });
   }
 
-  function getPlan(scenarioId) {
+  // The UI must select a DC explicitly. DCE is the backward-compatible call default only.
+  function getPlan(scenarioId, datacenter = &quot;DCE&quot;) {
+    if (datacenter !== &quot;DCE&quot; &amp;&amp; datacenter !== &quot;DCC&quot;) throw new RangeError(&quot;Datacenter must be DCE or DCC.&quot;);
     const source = scenarios.find(function (item) { return item.id === scenarioId; });
     if (!source) throw new RangeError(&quot;Unknown placement scenario: &quot; + scenarioId);
-    const scenario = Object.assign({}, source);
-    const clusters = BASE_CLUSTERS.map(function (cluster) {
-      return Object.assign({}, cluster, { cpuCapacity: 24, memoryCapacity: 96 });
+    const scenario = Object.assign({}, source, {
+      dc: datacenter,
+      affinity: scenarioId === &quot;balanced&quot; ? &quot;No AZ preference&quot; :
+        (scenarioId === &quot;exclusive&quot; ? &quot;Only &quot; : &quot;Must include &quot;) + datacenter + &quot;/AZ2&quot;
     });
-    if (scenarioId === &quot;capacity&quot;) {
-      const constrained = clusters.find(function (cluster) { return cluster.id === &quot;DCE-AZ2&quot;; });
-      constrained.cpuFree = 5;
-      constrained.memoryFree = 30;
-    }
-
-    const failoverSupported = scenario.cl === &quot;CL0&quot; || scenario.cl === &quot;CL1&quot;;
+    const inventory = buildClusters(scenarioId, datacenter);
+    const clusters = inventory.filter(function (cluster) { return cluster.dc === datacenter; });
+    const failoverSupported = CRITICAL_CLS.indexOf(scenario.cl) !== -1;
+    const requiredPool = failoverSupported ? &quot;critical&quot; : &quot;standard&quot;;
+    const requiredAZCount = failoverSupported ? 3 : 2;
     const normal = failoverSupported ? { cpu: FULL_LOAD.cpu / 3, memory: FULL_LOAD.memory / 3 } :
       { cpu: FULL_LOAD.cpu / 2, memory: FULL_LOAD.memory / 2 };
     const ceiling = { cpu: FULL_LOAD.cpu / 2, memory: FULL_LOAD.memory / 2 };
     const cases = scenarioCases(failoverSupported, normal, ceiling);
-    let candidates = [];
+    const candidates = [];
+    const unavailableAZs = [];
     let policyConflict = false;
     let reason = &quot;&quot;;
 
     if (scenarioId === &quot;exclusive&quot;) {
       policyConflict = true;
-      reason = &quot;Only DCE/AZ2 is allowed by this request, but CL0 requires three AZs within one datacenter.&quot;;
+      reason = &quot;Only &quot; + datacenter + &quot;/AZ2 is allowed by this request, but CL0 requires three AZs within the selected datacenter.&quot;;
     } else {
-      const dcs = scenarioId === &quot;balanced&quot; ? [&quot;DCE&quot;, &quot;DCC&quot;] : [&quot;DCE&quot;];
+      const dcs = [datacenter];
+      const azSets = failoverSupported ? [[&quot;AZ1&quot;, &quot;AZ2&quot;, &quot;AZ3&quot;]] : [[&quot;AZ1&quot;, &quot;AZ2&quot;], [&quot;AZ2&quot;, &quot;AZ3&quot;]];
       dcs.forEach(function (dc) {
-        const local = clusters.filter(function (cluster) { return cluster.dc === dc; });
-        if (failoverSupported) {
-          candidates.push(makeCandidate(local, cases, ceiling));
-        } else {
-          // The named AZ is mandatory; the other AZ is chosen by capacity score.
-          [[&quot;AZ1&quot;, &quot;AZ2&quot;], [&quot;AZ2&quot;, &quot;AZ3&quot;]].forEach(function (pair) {
-            candidates.push(makeCandidate(local.filter(function (cluster) { return pair.indexOf(cluster.az) !== -1; }), cases, ceiling));
+        azSets.forEach(function (azSet) {
+          const choices = azSet.map(function (az) {
+            const eligible = clusters.filter(function (cluster) {
+              return cluster.dc === dc &amp;&amp; cluster.az === az &amp;&amp; cluster.pool === requiredPool &amp;&amp;
+                cluster.allowedCLs.indexOf(scenario.cl) !== -1 &amp;&amp; cluster.eligible &amp;&amp; cluster.health === &quot;healthy&quot;;
+            });
+            if (!eligible.length &amp;&amp; unavailableAZs.indexOf(dc + &quot;/&quot; + az) === -1) unavailableAZs.push(dc + &quot;/&quot; + az);
+            return eligible;
           });
-        }
+          combinations(choices).forEach(function (targets) { candidates.push(makeCandidate(targets, cases, ceiling)); });
+        });
       });
     }
 
     candidates.sort(function (left, right) {
-      return left.score - right.score || (left.id &lt; right.id ? -1 : left.id &gt; right.id ? 1 : 0);
+      return left.score - right.score || left.totalUtilization - right.totalUtilization ||
+        (left.id &lt; right.id ? -1 : left.id &gt; right.id ? 1 : 0);
     });
     const selected = candidates.find(function (candidate) { return candidate.feasible; }) || null;
     if (selected) {
       reason = scenarioId === &quot;twoaz&quot; ?
-        &quot;Choose DCE/AZ1 + DCE/AZ2. The illustrative 50/50 normal split fits; no AZ-loss survival guarantee is included.&quot; :
-        &quot;Choose &quot; + selected.dc + &quot; across AZ1, AZ2 and AZ3. Normal demand and every single-AZ-loss scenario fit.&quot;;
+        &quot;Choose &quot; + datacenter + &quot;/AZ1/gp2 + &quot; + datacenter + &quot;/AZ2/gp2 from the standard pool. The illustrative 50/50 normal split fits; no AZ-loss survival guarantee is assigned.&quot; :
+        &quot;Choose &quot; + selected.dc + &quot; with one critical-pool cluster in each AZ. Normal one-third demand and every single-AZ-loss half-load scenario fit.&quot;;
+    } else if (!policyConflict &amp;&amp; unavailableAZs.length) {
+      reason = unavailableAZs.join(&quot;, &quot;) + &quot; has no eligible &quot; + requiredPool + &quot;-pool cluster for &quot; + scenario.cl +
+        &quot;. Available capacity in the other pool is not eligible; placement remains unassigned.&quot;;
     } else if (!policyConflict) {
-      reason = &quot;Mandatory DCE placement is not feasible: DCE/AZ2 needs 6 CPU during loss of AZ1 or AZ3, but only 5 CPU are uncommitted. Its normal 4-CPU share fits.&quot;;
+      reason = &quot;Selected &quot; + datacenter + &quot; placement is not feasible: both critical-pool clusters in &quot; + datacenter + &quot;/AZ2 need 6 CPU during loss of AZ1 or AZ3, but each has only 5 CPU uncommitted. Their normal 4-CPU share fits; standard-pool headroom cannot be substituted.&quot;;
     }
 
-    const checkRows = policyConflict ? [{
-      id: &quot;policy-conflict&quot;, label: &quot;Multi-AZ policy&quot;, pass: false, detail: reason
-    }] : summarize(selected || candidates[0] || null, cases, clusters);
+    let checkRows;
+    if (policyConflict) checkRows = [{ id: &quot;policy-conflict&quot;, label: &quot;Multi-AZ policy&quot;, pass: false, detail: reason }];
+    else if (!candidates.length) checkRows = [{ id: &quot;pool-eligibility&quot;, label: &quot;Eligible pool coverage&quot;, pass: false, detail: reason }];
+    else checkRows = summarize(selected || candidates[0], cases, clusters);
 
     return {
       scenario: scenario,
+      datacenter: datacenter,
+      inventoryCount: inventory.length,
       clusters: clusters,
       candidates: candidates,
       selected: selected,
@@ -2163,50 +2170,63 @@ html&gt;body{padding:0}&lt;/style&gt;
       normal: normal,
       ceiling: ceiling,
       checkRows: checkRows,
-      failoverSupported: failoverSupported
+      failoverSupported: failoverSupported,
+      requiredAZCount: requiredAZCount,
+      requiredPool: requiredPool
     };
   }
 
   const api = { scenarios: scenarios, getPlan: getPlan };
-  globalThis.PlacementDemo = api;
+  globalThis.PlacementPools = api;
   if (typeof module !== &quot;undefined&quot; &amp;&amp; module.exports) module.exports = api;
 })();
 
-  &lt;/script&gt;
+&lt;/script&gt;
   &lt;script&gt;
   (() =&gt; {
-    const root = document.getElementById('ocp-placement-walkthrough');
+    const root = document.getElementById(&#x27;ocp-placement-walkthrough&#x27;);
     const q = selector =&gt; root.querySelector(selector);
     const qa = selector =&gt; [...root.querySelectorAll(selector)];
     const initial = window.openai?.widgetState || {};
     const saved = initial.privateContent || {};
-    const allowed = PlacementDemo.scenarios.map(s =&gt; s.id);
-    const state = {scenario: allowed.includes(saved.scenario) ? saved.scenario : 'balanced', step: 0, check: 0, playing: false, failedAZ: null};
-    let plan = PlacementDemo.getPlan(state.scenario);
+    const allowed = PlacementPools.scenarios.map(s =&gt; s.id);
+    const state = {scenario: allowed.includes(saved.scenario) ? saved.scenario : &#x27;balanced&#x27;, datacenter: [&#x27;DCE&#x27;,&#x27;DCC&#x27;].includes(saved.datacenter)?saved.datacenter:&#x27;DCE&#x27;, step: 0, check: 0, playing: false, failedAZ: null};
+    let plan = PlacementPools.getPlan(state.scenario,state.datacenter);
     let timer = null, frame = null, currentBars = {}, mapWidth = 0;
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const phaseTitles = ['Application request', 'Validate policy and AZ affinity', 'Complete placement candidates', 'Normal and protected allocations', 'Validate every capacity scenario', 'Select the best feasible plan', 'Protect the complete reservation', 'Provision every target namespace', 'Placement ready'];
+    const motion = window.matchMedia(&#x27;(prefers-reduced-motion: reduce)&#x27;);
+    const phaseTitles = [&#x27;Application request&#x27;, &#x27;Validate policy and AZ affinity&#x27;, &#x27;Filter cluster pools and build plans&#x27;, &#x27;Normal and protected allocations&#x27;, &#x27;Validate every capacity scenario&#x27;, &#x27;Select the best feasible plan&#x27;, &#x27;Protect the complete reservation&#x27;, &#x27;Provision every target namespace&#x27;, &#x27;Placement ready&#x27;];
     const fmt = n =&gt; Number.isInteger(n) ? String(n) : n.toFixed(1);
-    function terminalStep() { return plan.policyConflict ? 1 : !plan.selected ? 4 : 8; }
+    function terminalStep() { return plan.policyConflict ? 1 : !plan.candidates.length ? 2 : !plan.selected ? 4 : 8; }
     function persist() {
-      if (typeof window.openai?.setWidgetState !== 'function') return;
-      window.openai.setWidgetState({modelContent: {scenario: state.scenario, criticality: plan.scenario.cl, selectedDatacenter: plan.selected?.dc || null, stage: phaseTitles[state.step], failedAZ: state.failedAZ, quotaAssumption: '12 CPU and 48 GiB is total application 100% demand'}, privateContent: {scenario: state.scenario, step: state.step, check: state.check, failedAZ: state.failedAZ}}).catch(() =&gt; {});
+      if (typeof window.openai?.setWidgetState !== &#x27;function&#x27;) return;
+      window.openai.setWidgetState({modelContent: {scenario: state.scenario, datacenter: state.datacenter, criticality: plan.scenario.cl, selectedDatacenter: state.datacenter, selectedClusters: plan.selected?.clusterIds || [], pool: plan.requiredPool, stage: phaseTitles[state.step], failedAZ: state.failedAZ, quotaAssumption: &#x27;12 CPU and 48 GiB is total application 100% demand; CL0/1 normally run one-third and reserve half in each AZ&#x27;}, privateContent: {scenario: state.scenario, datacenter: state.datacenter, step: state.step, check: state.check, failedAZ: state.failedAZ}}).catch(() =&gt; {});
     }
     function stop() { state.playing = false; if(timer) clearTimeout(timer); timer=null; }
     function drawMap() {
-      const svg = q('#op-map');
+      const svg = q(&#x27;#op-map&#x27;);
       const width = Math.max(240, Math.round(svg.getBoundingClientRect().width));
       if (width === mapWidth &amp;&amp; svg.childElementCount) return;
       mapWidth = width;
-      svg.setAttribute('viewBox', `0 0 ${width} 326`);
-      const gap = 10, cw = (width - gap * 2) / 3;
-      let html = '&lt;title&gt;Placement across two datacenters&lt;/title&gt;&lt;desc&gt;Free capacity is illustrative and already excludes existing commitments, platform overhead and the safety buffer. Each AZ represents one candidate cluster.&lt;/desc&gt;';
-      ['DCE','DCC'].forEach((dc, di) =&gt; {
-        const top = di * 163;
-        html += `&lt;text x=&quot;0&quot; y=&quot;${top+17}&quot; font-weight=&quot;500&quot;&gt;${dc} · ${dc==='DCE'?'East':'Central'}&lt;/text&gt;`;
-        plan.clusters.filter(c=&gt;c.dc===dc).forEach((c,i) =&gt; {
-          const x=i*(cw+gap), inner=cw-16;
-          html += `&lt;g data-cluster=&quot;${c.id}&quot;&gt;&lt;rect class=&quot;op-az-box&quot; x=&quot;${x}&quot; y=&quot;${top+29}&quot; width=&quot;${cw}&quot; height=&quot;124&quot; rx=&quot;5&quot;/&gt;&lt;text x=&quot;${x+8}&quot; y=&quot;${top+49}&quot; font-weight=&quot;500&quot;&gt;${c.az}&lt;/text&gt;&lt;text class=&quot;text-small op-secondary&quot; data-free-cpu x=&quot;${x+8}&quot; y=&quot;${top+69}&quot;&gt;Free ${fmt(c.cpuFree)} CPU&lt;/text&gt;&lt;text class=&quot;text-small op-secondary&quot; data-free-memory x=&quot;${x+8}&quot; y=&quot;${top+86}&quot;&gt;${fmt(c.memoryFree)} GiB&lt;/text&gt;&lt;rect class=&quot;op-bar-track&quot; x=&quot;${x+8}&quot; y=&quot;${top+97}&quot; width=&quot;${inner}&quot; height=&quot;9&quot; rx=&quot;2&quot;/&gt;&lt;rect class=&quot;op-live&quot; x=&quot;${x+8}&quot; y=&quot;${top+97}&quot; width=&quot;0&quot; height=&quot;9&quot; rx=&quot;1&quot;/&gt;&lt;rect class=&quot;op-spare&quot; x=&quot;${x+8}&quot; y=&quot;${top+97}&quot; width=&quot;0&quot; height=&quot;9&quot; rx=&quot;1&quot;/&gt;&lt;text class=&quot;text-small&quot; data-allocation x=&quot;${x+8}&quot; y=&quot;${top+125}&quot;&gt;Not placed&lt;/text&gt;&lt;text class=&quot;text-small op-secondary&quot; data-sub x=&quot;${x+8}&quot; y=&quot;${top+143}&quot;&gt;Candidate cluster&lt;/text&gt;&lt;/g&gt;`;
+      const gap = 12, azWidth = (width - gap * 2) / 3;
+      const twoColumns = azWidth &gt;= 210;
+      const cellGap = 6, inset = 6, rowHeight = 84;
+      const cellWidth = twoColumns ? (azWidth-2*inset-cellGap)/2 : azWidth-2*inset;
+      const rows = twoColumns ? 2 : 4;
+      const regionHeight = 62 + rows*(rowHeight+cellGap) + 8;
+      svg.setAttribute(&#x27;viewBox&#x27;, `0 0 ${width} ${regionHeight}`);
+      let html = `&lt;title&gt;${state.datacenter}: named clusters and dedicated pools&lt;/title&gt;&lt;desc&gt;Only ${state.datacenter} is in scope. Each AZ contains four illustrative clusters. Squares identify critical gp1/ap1 clusters; circles identify standard gp2/ap2 clusters. Capacity shown is uncommitted after existing reservations, platform overhead and safety buffer. Pool eligibility is enforced before CPU and memory checks.&lt;/desc&gt;`;
+      [state.datacenter].forEach((dc, di) =&gt; {
+        const top = di * regionHeight;
+        html += `&lt;text x=&quot;0&quot; y=&quot;${top+17}&quot; font-weight=&quot;500&quot;&gt;${dc} · ${dc===&#x27;DCE&#x27;?&#x27;East&#x27;:&#x27;Central&#x27;}&lt;/text&gt;`;
+        [&#x27;AZ1&#x27;,&#x27;AZ2&#x27;,&#x27;AZ3&#x27;].forEach((az,azIndex)=&gt;{
+          const ax=azIndex*(azWidth+gap);
+          html += `&lt;rect class=&quot;op-az-boundary&quot; x=&quot;${ax}&quot; y=&quot;${top+29}&quot; width=&quot;${azWidth}&quot; height=&quot;${regionHeight-43}&quot; rx=&quot;5&quot;/&gt;&lt;text x=&quot;${ax+azWidth/2}&quot; y=&quot;${top+49}&quot; text-anchor=&quot;middle&quot; font-weight=&quot;500&quot;&gt;${az}&lt;/text&gt;`;
+          plan.clusters.filter(c=&gt;c.dc===dc &amp;&amp; c.az===az).forEach((c,i)=&gt;{
+            const column=twoColumns?i%2:0, row=twoColumns?Math.floor(i/2):i;
+            const x=ax+inset+column*(cellWidth+cellGap), y=top+59+row*(rowHeight+cellGap), inner=cellWidth-12;
+            const poolMark=c.pool===&#x27;critical&#x27;?`&lt;rect class=&quot;op-pool-critical&quot; x=&quot;${x+cellWidth-14}&quot; y=&quot;${y+10}&quot; width=&quot;8&quot; height=&quot;8&quot;/&gt;`:`&lt;circle class=&quot;op-pool-standard&quot; cx=&quot;${x+cellWidth-10}&quot; cy=&quot;${y+14}&quot; r=&quot;4&quot;/&gt;`;
+            html += `&lt;g data-cluster=&quot;${c.id}&quot;&gt;&lt;title&gt;${dc}/${az}/${c.name} · ${c.pool} pool&lt;/title&gt;&lt;rect class=&quot;op-az-box ${c.pool}&quot; x=&quot;${x}&quot; y=&quot;${y}&quot; width=&quot;${cellWidth}&quot; height=&quot;${rowHeight}&quot; rx=&quot;4&quot;/&gt;&lt;text data-name x=&quot;${x+6}&quot; y=&quot;${y+18}&quot; font-weight=&quot;500&quot;&gt;${c.name}&lt;/text&gt;&lt;text class=&quot;text-small op-secondary&quot; data-free-cpu x=&quot;${x+6}&quot; y=&quot;${y+39}&quot;&gt;${fmt(c.cpuFree)}c&lt;/text&gt;${poolMark}&lt;text class=&quot;text-small op-secondary&quot; data-free-memory x=&quot;${x+cellWidth-6}&quot; y=&quot;${y+39}&quot; text-anchor=&quot;end&quot;&gt;${fmt(c.memoryFree)}Gi&lt;/text&gt;&lt;rect class=&quot;op-bar-track&quot; x=&quot;${x+6}&quot; y=&quot;${y+49}&quot; width=&quot;${inner}&quot; height=&quot;6&quot; rx=&quot;2&quot;/&gt;&lt;rect class=&quot;op-live&quot; x=&quot;${x+6}&quot; y=&quot;${y+49}&quot; width=&quot;0&quot; height=&quot;6&quot; rx=&quot;1&quot;/&gt;&lt;rect class=&quot;op-spare&quot; x=&quot;${x+6}&quot; y=&quot;${y+49}&quot; width=&quot;0&quot; height=&quot;6&quot; rx=&quot;1&quot;/&gt;&lt;text class=&quot;text-small&quot; data-allocation x=&quot;${x+6}&quot; y=&quot;${y+75}&quot;&gt;Not placed&lt;/text&gt;&lt;/g&gt;`;
+          });
         });
       });
       svg.innerHTML = html;
@@ -2215,13 +2235,13 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     function clusterTargets() {
       if(state.step &lt; 2 || plan.policyConflict) return [];
-      if(state.step &lt; 5) return [...new Set(plan.candidates.flatMap(p=&gt;p.clusterIds))];
+      if(state.step === 2) return [...new Set(plan.candidates.flatMap(p=&gt;p.clusterIds))];
+      if(state.step &lt; 5) return (plan.selected || plan.candidates[0])?.clusterIds || [];
       return plan.selected?.clusterIds || [];
     }
     function updateMap(animate=true) {
-      if(!q('#op-map').childElementCount) return;
+      if(!q(&#x27;#op-map&#x27;).childElementCount) return;
       const targets = clusterTargets();
-      const pending = state.step &gt;= 3 &amp;&amp; state.step &lt; 6;
       const desired = {};
       let simulatedAZ = state.step &gt;= 8 ? state.failedAZ : null;
       if(state.step===4 &amp;&amp; state.check &gt; 0 &amp;&amp; plan.failoverSupported) simulatedAZ = `AZ${state.check}`;
@@ -2230,26 +2250,26 @@ html&gt;body{padding:0}&lt;/style&gt;
         const g=q(`[data-cluster=&quot;${c.id}&quot;]`);
         if(!g) return;
         const target=targets.includes(c.id);
-        const failed=target &amp;&amp; c.az===simulatedAZ &amp;&amp; c.dc===inspectedDC;
+        const failed=c.az===simulatedAZ &amp;&amp; c.dc===inspectedDC;
         const shown = target &amp;&amp; state.step &gt;= 3;
         const survivor = shown &amp;&amp; Boolean(simulatedAZ) &amp;&amp; !failed &amp;&amp; c.dc===inspectedDC;
         const reserved=target &amp;&amp; state.step&gt;=6;
-        g.querySelector('[data-free-cpu]').textContent=failed?'Free —':`Free ${fmt(c.cpuFree-(reserved?plan.ceiling.cpu:0))} CPU`;
-        g.querySelector('[data-free-memory]').textContent=failed?'—':`${fmt(c.memoryFree-(reserved?plan.ceiling.memory:0))} GiB`;
+        g.querySelector(&#x27;[data-free-cpu]&#x27;).textContent=failed?&#x27;—&#x27;:`${fmt(c.cpuFree-(reserved?plan.ceiling.cpu:0))}c`;
+        g.querySelector(&#x27;[data-free-memory]&#x27;).textContent=failed?&#x27;—&#x27;:`${fmt(c.memoryFree-(reserved?plan.ceiling.memory:0))}Gi`;
         let live = shown &amp;&amp; !failed ? (survivor ? plan.ceiling.cpu : plan.normal.cpu) : 0;
         const protectedCPU = shown &amp;&amp; !failed ? plan.ceiling.cpu : 0;
         const denom=plan.ceiling.cpu || 6;
         desired[c.id]={live:live/denom, spare:Math.max(0,(protectedCPU-live)/denom)};
-        g.querySelector('.op-az-box').classList.toggle('is-target', target);
-        g.querySelector('.op-az-box').classList.toggle('is-offline', failed);
-        const allocation=g.querySelector('[data-allocation]');
-        const sub=g.querySelector('[data-sub]');
-        if(failed) { allocation.textContent='Unavailable'; sub.textContent=state.step===4?'AZ loss test':'Offline'; }
+        g.querySelector(&#x27;.op-az-box&#x27;).classList.toggle(&#x27;is-target&#x27;, target);
+        g.querySelector(&#x27;.op-az-box&#x27;).classList.toggle(&#x27;is-offline&#x27;, failed);
+        g.querySelector(&#x27;.op-az-box&#x27;).classList.toggle(&#x27;is-ineligible&#x27;, c.pool!==plan.requiredPool || !c.eligible);
+        const allocation=g.querySelector(&#x27;[data-allocation]&#x27;);
+        g.dataset.target=String(target);
+        if(failed) { allocation.textContent=&#x27;AZ down&#x27;; }
         else if(shown) {
           const memory=survivor?plan.ceiling.memory:plan.normal.memory;
-          allocation.textContent=`${fmt(live)}CPU · ${fmt(memory)}Gi`;
-          sub.textContent=state.step&gt;=8?'NS ready':state.step===7?'Creating NS':state.step&gt;=6?'Reserved':'Proposed';
-        } else { allocation.textContent=target?'Eligible':'Not placed'; sub.textContent='Cluster'; }
+          allocation.textContent=`${fmt(live)}CPU/${fmt(memory)}Gi`;
+        } else { allocation.textContent=!c.eligible?&#x27;Unavailable&#x27;:c.pool!==plan.requiredPool?&#x27;Other pool&#x27;:target?&#x27;Eligible&#x27;:&#x27;Not placed&#x27;; }
       });
       if(frame) cancelAnimationFrame(frame);
       const start=performance.now(), from={...currentBars};
@@ -2259,11 +2279,11 @@ html&gt;body{padding:0}&lt;/style&gt;
         Object.keys(desired).forEach(id=&gt;{
           const a=from[id]||{live:0,spare:0}, b=desired[id];
           const v={live:a.live+(b.live-a.live)*ease,spare:a.spare+(b.spare-a.spare)*ease};
-          const g=q(`[data-cluster=&quot;${id}&quot;]`), track=g.querySelector('.op-bar-track');
-          const x=Number(track.getAttribute('x')), width=Number(track.getAttribute('width'));
-          g.querySelector('.op-live').setAttribute('width',Math.max(0,v.live*width));
-          g.querySelector('.op-spare').setAttribute('x',x+v.live*width);
-          g.querySelector('.op-spare').setAttribute('width',Math.max(0,v.spare*width));
+          const g=q(`[data-cluster=&quot;${id}&quot;]`), track=g.querySelector(&#x27;.op-bar-track&#x27;);
+          const x=Number(track.getAttribute(&#x27;x&#x27;)), width=Number(track.getAttribute(&#x27;width&#x27;));
+          g.querySelector(&#x27;.op-live&#x27;).setAttribute(&#x27;width&#x27;,Math.max(0,v.live*width));
+          g.querySelector(&#x27;.op-spare&#x27;).setAttribute(&#x27;x&#x27;,x+v.live*width);
+          g.querySelector(&#x27;.op-spare&#x27;).setAttribute(&#x27;width&#x27;,Math.max(0,v.spare*width));
           currentBars[id]=v;
         });
         if(t&lt;1) frame=requestAnimationFrame(tick); else frame=null;
@@ -2272,52 +2292,56 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     function resultText() {
       if(state.step===0) return `${plan.scenario.cl} · ${plan.scenario.affinity} · ${plan.scenario.dc}`;
-      if(state.step===1) return plan.policyConflict ? `Policy conflict: ${plan.reason}` : 'Required affinity filters candidates; a preferred AZ affects ranking.';
-      if(state.step===2) return `${plan.candidates.length} complete ${plan.scenario.cl==='CL3'?'two-AZ':'three-AZ'} candidate${plan.candidates.length===1?'':'s'} · one target cluster per AZ.`;
-      if(state.step===3) return plan.failoverSupported ? 'Per AZ: normal 4 CPU / 16 GiB; protected ceiling 6 CPU / 24 GiB.' : 'Illustrative 50/50 split: 6 CPU / 24 GiB per AZ; failover policy unassigned.';
+      if(state.step===1) return plan.policyConflict ? `Policy conflict: ${plan.reason}` : &#x27;Required affinity filters candidates; a preferred AZ affects ranking.&#x27;;
+      if(state.step===2) return !plan.candidates.length?`Deferred: ${plan.reason}`:`${state.datacenter} only · ${plan.candidates.length} eligible ${plan.requiredPool}-pool combinations · one cluster per required AZ.`;
+      if(state.step===3) return plan.failoverSupported ? &#x27;Per AZ: run 33⅓% (4 CPU / 16 GiB); reserve 50% (6 CPU / 24 GiB).&#x27; : &#x27;Standard pool · illustrative 50/50 split · failover policy unassigned.&#x27;;
       if(state.step===4) {
         const row=plan.checkRows[state.check];
         if(state.check&gt;=plan.checkRows.length-1 &amp;&amp; !plan.selected) return `Deferred: ${plan.reason}`;
-        return row?.detail || 'Check CPU, memory, dependency reachability and pod fit on every target.';
+        return row?.detail || &#x27;Check CPU, memory, dependency reachability and pod fit on every target.&#x27;;
       }
-      if(state.step===5) return `${plan.selected.dc} selected · ${plan.selected.clusterIds.map(id=&gt;id.split('-')[1]).join(' + ')} · ${plan.candidates.filter(p=&gt;p.feasible).length} feasible plan${plan.candidates.filter(p=&gt;p.feasible).length===1?'':'s'}.`;
-      if(state.step===6) return 'Quota allows growth; the ledger protects physical capacity. Changed inventory → recheck.';
-      if(state.step===7) return 'Apply namespace, quota, LimitRange, RBAC and NetworkPolicy; partial failure → reconcile.';
-      if(state.failedAZ) return `${state.failedAZ} lost · two survivors scale to 6 CPU / 24 GiB each · 100% aggregate restored.`;
-      return plan.failoverSupported ? `${plan.selected.dc} ready · normal 4 CPU / 16 GiB per AZ · failover capacity protected.` : `${plan.selected.dc} two-AZ footprint ready · CL2–CL5 failover guarantee remains unassigned.`;
+      if(state.step===5) return `${plan.selected.dc} selected · ${plan.requiredPool} pool · ${plan.candidates.filter(p=&gt;p.feasible).length} feasible plan${plan.candidates.filter(p=&gt;p.feasible).length===1?&#x27;&#x27;:&#x27;s&#x27;}.`;
+      if(state.step===6) return &#x27;Quota allows growth; the ledger protects physical capacity. Changed inventory → recheck.&#x27;;
+      if(state.step===7) return &#x27;Apply namespace, quota, LimitRange, RBAC and NetworkPolicy; partial failure → reconcile.&#x27;;
+      if(state.failedAZ) return `${state.failedAZ} lost · two survivors scale to 50% each (6 CPU / 24 GiB) · 100% aggregate restored.`;
+      return plan.failoverSupported ? `${plan.selected.dc} ready · run 33⅓% per AZ · 50% per-AZ capacity protected.` : `${plan.selected.dc} two-AZ footprint ready · CL2–CL5 failover guarantee remains unassigned.`;
     }
     function render(animate=true) {
       state.step=Math.min(state.step,terminalStep());
       state.check=Math.max(0,Math.min(state.check,plan.checkRows.length-1));
-      q('#op-scenario').value=state.scenario;
-      q('#op-phase').textContent=phaseTitles[state.step];
-      q('#op-request').textContent=`${plan.scenario.cl} · ${plan.scenario.affinity}`;
-      qa('[data-step]').forEach(li=&gt;{
+      q(&#x27;#op-scenario&#x27;).value=state.scenario;
+      q(&#x27;#op-datacenter&#x27;).value=state.datacenter;
+      q(&#x27;#op-phase&#x27;).textContent=phaseTitles[state.step];
+      q(&#x27;#op-request&#x27;).textContent=`${state.datacenter} only · ${plan.scenario.cl} · ${plan.scenario.affinity}`;
+      q(&#x27;#op-policy-summary&#x27;).textContent=plan.failoverSupported?&#x27;CL0/CL1: run 33⅓% and reserve 50% in each AZ.&#x27;:&#x27;CL2–CL5: two AZs in the standard pool; failover policy unassigned.&#x27;;
+      const preview=state.step&gt;=3?(plan.selected||plan.candidates[0]):null;
+      q(&#x27;#op-selection&#x27;).textContent=preview?`${state.step&lt;5?&#x27;Preview&#x27;:&#x27;Targets&#x27;}: ${preview.clusterIds.map(id=&gt;id.replaceAll(&#x27;-&#x27;,&#x27;/&#x27;)).join(&#x27; · &#x27;)}`:&#x27;No placement selected.&#x27;;
+      qa(&#x27;[data-step]&#x27;).forEach(li=&gt;{
         const n=Number(li.dataset.step);
-        li.dataset.state=n&lt;state.step?'done':n===state.step?'active':'future';
-        if(n===state.step) li.setAttribute('aria-current','step'); else li.removeAttribute('aria-current');
+        li.dataset.state=n&lt;state.step?&#x27;done&#x27;:n===state.step?&#x27;active&#x27;:&#x27;future&#x27;;
+        if(n===state.step) li.setAttribute(&#x27;aria-current&#x27;,&#x27;step&#x27;); else li.removeAttribute(&#x27;aria-current&#x27;);
       });
       const terminal=state.step===terminalStep() &amp;&amp; (state.step!==4 || state.check===plan.checkRows.length-1);
-      q('#op-play').textContent=state.playing?'Pause':terminal?'Replay':'Play';
-      q('#op-back').disabled=state.step===0;
-      q('#op-next').disabled=terminal;
-      q('#op-position').textContent=`Step ${state.step+1} of 9`;
-      q('#op-bar-label').textContent=plan.failoverSupported?'Each full bar: 6 CPU / 24 GiB protected.':'CL3 example: equal split; failover policy pending.';
-      q('#op-live-label').textContent=state.step&gt;=8?'Running':'Normal share';
-      q('#op-spare-label').textContent=state.step&gt;=6?'Protected spare':'Failover headroom';
-      q('#op-check-panel').hidden=state.step&lt;4;
+      q(&#x27;#op-play&#x27;).textContent=state.playing?&#x27;Pause&#x27;:terminal?&#x27;Replay&#x27;:&#x27;Play&#x27;;
+      q(&#x27;#op-back&#x27;).disabled=state.step===0;
+      q(&#x27;#op-next&#x27;).disabled=terminal;
+      q(&#x27;#op-position&#x27;).textContent=`Step ${state.step+1} of 9`;
+      q(&#x27;#op-bar-label&#x27;).textContent=plan.failoverSupported?&#x27;Full bar = 50% of app capacity (6 CPU / 24 GiB).&#x27;:&#x27;CL3 example: equal split; failover policy pending.&#x27;;
+      q(&#x27;#op-live-label&#x27;).textContent=state.step&gt;=8?&#x27;Running&#x27;:&#x27;Normal share&#x27;;
+      q(&#x27;#op-spare-label&#x27;).textContent=state.step&gt;=6?&#x27;Protected spare&#x27;:&#x27;Failover headroom&#x27;;
+      q(&#x27;#op-check-panel&#x27;).hidden=state.step&lt;4;
       const rows=plan.checkRows;
-      q('#op-check-body').innerHTML=rows.map((row,i)=&gt;{
+      q(&#x27;#op-check-body&#x27;).innerHTML=rows.map((row,i)=&gt;{
         const reached=state.step&gt;4 || i&lt;=state.check;
-        return `&lt;tr data-current=&quot;${state.step===4 &amp;&amp; i===state.check}&quot;&gt;&lt;td&gt;${row.label}&lt;/td&gt;&lt;td&gt;${reached?(row.pass?'Pass':'Fail'):'Pending'}&lt;/td&gt;&lt;/tr&gt;`;
-      }).join('');
-      const error=plan.policyConflict&amp;&amp;state.step===1 || !plan.selected&amp;&amp;state.step===4&amp;&amp;state.check===rows.length-1;
-      q('#op-result').textContent=resultText();
-      q('#op-result').classList.toggle('text-destructive',error);
-      if(error) q('#op-result').setAttribute('role','alert'); else q('#op-result').removeAttribute('role');
-      q('#op-runtime').hidden=state.step!==8 || !plan.failoverSupported;
-      qa('[data-fail]').forEach(b=&gt;b.setAttribute('aria-pressed',String(b.dataset.fail===state.failedAZ)));
-      q('#op-recover').disabled=!state.failedAZ;
+        return `&lt;tr data-current=&quot;${state.step===4 &amp;&amp; i===state.check}&quot;&gt;&lt;td&gt;${row.label}&lt;/td&gt;&lt;td&gt;${reached?(row.pass?&#x27;Pass&#x27;:&#x27;Fail&#x27;):&#x27;Pending&#x27;}&lt;/td&gt;&lt;/tr&gt;`;
+      }).join(&#x27;&#x27;);
+      const error=plan.policyConflict&amp;&amp;state.step===1 || !plan.candidates.length&amp;&amp;state.step===2 || !plan.selected&amp;&amp;state.step===4&amp;&amp;state.check===rows.length-1;
+      q(&#x27;#op-result&#x27;).textContent=resultText();
+      q(&#x27;#op-result&#x27;).classList.toggle(&#x27;text-destructive&#x27;,error);
+      if(error) q(&#x27;#op-result&#x27;).setAttribute(&#x27;role&#x27;,&#x27;alert&#x27;); else q(&#x27;#op-result&#x27;).removeAttribute(&#x27;role&#x27;);
+      q(&#x27;#op-runtime&#x27;).hidden=state.step!==8 || !plan.failoverSupported;
+      qa(&#x27;[data-fail]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b.dataset.fail===state.failedAZ)));
+      q(&#x27;#op-recover&#x27;).disabled=!state.failedAZ;
       updateMap(animate);
     }
     function advance() {
@@ -2335,7 +2359,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         if(!end) queue();
       },motion.matches?650:state.step===4?1200:1450);
     }
-    q('#op-play').addEventListener('click',()=&gt;{
+    q(&#x27;#op-play&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{
       if(state.playing) stop();
       else {
         const end=state.step===terminalStep() &amp;&amp; (state.step!==4 || state.check===plan.checkRows.length-1);
@@ -2344,32 +2368,37 @@ html&gt;body{padding:0}&lt;/style&gt;
       }
       render();persist();
     });
-    q('#op-next').addEventListener('click',()=&gt;{stop();advance();render();persist();});
-    q('#op-back').addEventListener('click',()=&gt;{
+    q(&#x27;#op-next&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{stop();advance();render();persist();});
+    q(&#x27;#op-back&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{
       stop();state.failedAZ=null;
       if(state.step===4&amp;&amp;state.check&gt;0)state.check--;else {state.step=Math.max(0,state.step-1);state.check=0;}
       render();persist();
     });
-    q('#op-scenario').addEventListener('change',event=&gt;{
+    q(&#x27;#op-scenario&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{
       stop();state.scenario=event.target.value;state.step=0;state.check=0;state.failedAZ=null;
-      plan=PlacementDemo.getPlan(state.scenario);mapWidth=0;drawMap();render(false);persist();
+      plan=PlacementPools.getPlan(state.scenario,state.datacenter);mapWidth=0;drawMap();render(false);persist();
     });
-    qa('[data-fail]').forEach(b=&gt;b.addEventListener('click',()=&gt;{state.failedAZ=b.dataset.fail;render();persist();}));
-    q('#op-recover').addEventListener('click',()=&gt;{state.failedAZ=null;render();persist();});
+    q(&#x27;#op-datacenter&#x27;).addEventListener(&#x27;change&#x27;,event=&gt;{
+      stop();state.datacenter=event.target.value;state.step=0;state.check=0;state.failedAZ=null;
+      plan=PlacementPools.getPlan(state.scenario,state.datacenter);mapWidth=0;drawMap();render(false);persist();
+    });
+    qa(&#x27;[data-fail]&#x27;).forEach(b=&gt;b.addEventListener(&#x27;click&#x27;,()=&gt;{state.failedAZ=b.dataset.fail;render();persist();}));
+    q(&#x27;#op-recover&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{state.failedAZ=null;render();persist();});
     function restore(snapshot) {
       const p=snapshot?.privateContent;
       if(!p||!allowed.includes(p.scenario))return;
-      if(p.scenario===state.scenario &amp;&amp; p.step===state.step &amp;&amp; p.check===state.check &amp;&amp; (p.failedAZ||null)===state.failedAZ)return;
-      stop();state.scenario=p.scenario;plan=PlacementDemo.getPlan(state.scenario);
+      const dc=[&#x27;DCE&#x27;,&#x27;DCC&#x27;].includes(p.datacenter)?p.datacenter:&#x27;DCE&#x27;;
+      if(p.scenario===state.scenario &amp;&amp; dc===state.datacenter &amp;&amp; p.step===state.step &amp;&amp; p.check===state.check &amp;&amp; (p.failedAZ||null)===state.failedAZ)return;
+      stop();state.scenario=p.scenario;state.datacenter=dc;plan=PlacementPools.getPlan(state.scenario,state.datacenter);
       state.step=Number.isInteger(p.step)?Math.max(0,Math.min(8,p.step)):0;
       state.check=Number.isInteger(p.check)?p.check:0;
-      state.failedAZ=['AZ1','AZ2','AZ3'].includes(p.failedAZ)?p.failedAZ:null;
+      state.failedAZ=[&#x27;AZ1&#x27;,&#x27;AZ2&#x27;,&#x27;AZ3&#x27;].includes(p.failedAZ)?p.failedAZ:null;
       mapWidth=0;drawMap();render(false);
     }
-    window.addEventListener('openai:set_globals',event=&gt;{
+    window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{
       if(event.detail?.globals?.widgetState)restore(event.detail.globals.widgetState);
     });
-    new ResizeObserver(()=&gt;drawMap()).observe(q('#op-map'));
+    new ResizeObserver(()=&gt;drawMap()).observe(q(&#x27;#op-map&#x27;));
     drawMap();restore(initial);render(false);
   })();
   &lt;/script&gt;
@@ -2377,7 +2406,8 @@ html&gt;body{padding:0}&lt;/style&gt;
 
 
 
-&lt;style id=&quot;codex-visualization-document-scrollbar&quot;&gt;html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}&lt;/style&gt;
+
+
 
 &lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
@@ -2687,11 +2717,11 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;/script&gt;
 &lt;script id=&quot;codex-visualization-tabs&quot;&gt;
 (() =&gt; {
-  const selector = '.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]';
-  const disabled = ':disabled,[aria-disabled=&quot;true&quot;]';
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
   const selectTab = (selected) =&gt; {
     const panelId = selected.getAttribute(&quot;aria-controls&quot;);
-    for (const tab of selected.closest('[role=&quot;tablist&quot;]').querySelectorAll('[role=&quot;tab&quot;]')) {
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
       const active = tab === selected;
       tab.classList.toggle(&quot;active&quot;, active);
       tab.setAttribute(&quot;aria-selected&quot;, String(active));
@@ -2715,7 +2745,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       return;
     }
     const tabs = Array.from(
-      tab.closest('[role=&quot;tablist&quot;]').querySelectorAll('[role=&quot;tab&quot;]'),
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
     ).filter((candidate) =&gt; !candidate.matches(disabled));
     const current = tabs.indexOf(tab);
     let next;
@@ -2735,11 +2765,11 @@ html&gt;body{padding:0}&lt;/style&gt;
     selectTab(tabs[next]);
   };
 
-  for (const list of document.querySelectorAll('.nav[role=&quot;tablist&quot;]')) {
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
     const selected =
-      list.querySelector('[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]') ??
-      list.querySelector('[role=&quot;tab&quot;].active') ??
-      list.querySelector('[role=&quot;tab&quot;]');
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
     if (selected != null) {
       selectTab(selected);
     }
@@ -2776,7 +2806,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
       const controls = document.createElement(&quot;div&quot;);
       controls.className = &quot;viz-carousel-controls&quot;;
-      // Portable copy of the settings dropdown's legacy glyph; no 14px icon-package preset matches it.
+      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
       // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
       controls.innerHTML = `
       &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
